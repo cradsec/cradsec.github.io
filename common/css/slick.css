@@ -1,0 +1,400 @@
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    padding:0;
+}
+
+.slider .slick-slider {
+  margin:0 auto;
+  height:100%;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+    height:100%;
+}
+
+.voice .slick-list {
+  line-height:0;
+  background:white;
+}
+
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:100%;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+
+.slider .slick-slide img {
+  width: 50%;
+  height: auto;
+  float:right;
+}
+.slick-prev, .slick-next {
+  z-index: 1;
+}
+.slick-prev:before, .slick-next:before {
+  color: #000;
+}
+.slick-slide {
+  transition: all ease-in-out .3s;
+  
+}
+.slick-active {
+  opacity: 1;
+}
+.slick-current {
+  opacity: 1;
+}
+.thumb {
+  margin: 20px 0 0;
+}
+.thumb .slick-slide {
+  cursor: pointer;
+}
+.thumb .slick-slide:hover {
+  opacity: .7;
+}
+
+
+.slick-outer{position: relative;}
+.slick-content{
+  color: #000;
+  width:70%;
+  font-size:1.6rem;
+  padding:20px;
+  position:absolute;
+  bottom:15px;
+  left:15px;
+  background:url(../img/arrow_b.png) no-repeat 95% 95% rgba(255,255,255,0.8);
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.slick-content a {
+	text-decoration:none;
+}
+
+  .slick-content:hover {
+    transform:scale(1.02,1.02);
+    transition:0.2s all;
+  }
+
+.slick-content h1 {
+	font-weight:bold;
+	font-size:1.8rem;
+	color:black;
+	background:#0055a7;
+	color:white;
+	padding:0.5em;
+	margin-bottom:0.2em;
+}
+
+	.slick_title a {
+		color:black;
+	}
+
+.slide {
+	height:100%;
+	position:relative;
+}
+
+
+.slider .prj01 {
+	background:url(../img/slider/project01.jpg) no-repeat center center;
+	background-size:cover;
+}
+.slider .prj02 {
+	background:url(../img/slider/project02.jpg) no-repeat center center;
+	background-size:cover;
+}
+.slider .prj03 {
+	background:url(../img/slider/project03.jpg) no-repeat;
+	background-size:cover;
+}
+.slider .prj04 {
+	background:url(../img/slider/project04.jpg) no-repeat;
+	background-size:cover;
+}
+.slider .prj05 {
+	background:url(../img/slider/project05.jpg) no-repeat;
+	background-size:cover;
+}
+.slider .prj06 {
+	background:url(../img/slider/project06.jpg) no-repeat;
+	background-size:cover;
+}
+.slider .prj07 {
+	background:url(../img/slider/project07.jpg) no-repeat;
+	background-size:cover;
+}
+
+.main-slider {
+    width:387px;
+    margin:20px 0 0 0;
+}
+@media screen and (max-width: 500px){
+	.main-slider {
+		width:300px;
+		height:533px;
+	}
+	
+	.main-slider iframe {
+		width:300px;
+		height:533px;
+	}
+}
+
+.flexbox_end {
+  display:flex;
+  justify-content:flex-end;
+  align-items:end;
+}
+@media screen and (max-width: 650px){
+  .flexbox_end {
+    display:block;
+    width: 387px;
+    margin:0 auto;
+  }
+
+  .voice .slick-track {
+    display:flex;
+  }
+  .thumbnail-img {
+    opacity:0.6;
+  }
+}
+
+.thumbnail-img {
+  float:none;
+  width:230px!important;
+  cursor:pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .thumbnail-img {
+    width:100%!important;
+    background:white;
+  }
+
+  .flexbox_end {
+	  width:300px;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+.thumbnail-img {
+  opacity:0.6;
+}
+}
+
+.thumbnail-img.slick-current {
+  border:solid 5px #0055a7;
+  opacity:1;
+}
+@media screen and (max-width: 650px) {
+  .thumbnail-img.slick-current {
+   border-left:0;
+   border-right:0;
+   border-top:0;
+   border-bottom:solid 5px #cc0000;
+}
+}
+
+
+
+
+
+
+/* ウィンドウ幅が～768pxの場合に適用するCSS */
+@media only screen and (max-width: 768px) {
+.slick-content {
+	width:95%;
+	font-size:1.4rem;
+	padding:20px;
+}
+
+.slick_title {
+	font-size:2.0rem;
+}
+
+.slick-slide img {
+	width:100%;
+	float:none;
+}
+
+
+}
+
+.slick-arrow {
+	position: absolute;
+	z-index: 5;
+}
+.slick-prev,
+.slick-next {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 40px;
+	cursor: pointer;
+	text-indent: -9999px;
+	border:0;
+	background:none;
+}
+.slick-prev {
+	left: -25px;
+	top: 44%;
+}
+.slick-next {
+	right: -25px;
+	top: 44%;
+}
+
+
+.member-box .slick-prev {
+	left: 0;
+}
+.member-box .slick-next {
+	right: 0;
+}
+
+.slick-next {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.slick-prev:before,
+.slick-prev:after,
+.slick-next:before,
+.slick-next:after {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background-color: #0963a1;
+}
+.slick-prev:before,
+.slick-next:before {
+	left: 30%;
+	top: 0;
+	-webkit-transform: skew(145deg, 0deg);
+	-ms-transform: skew(145deg, 0deg);
+	transform: skew(145deg, 0deg);
+}
+.slick-prev:after,
+.slick-next:after {
+	left: 30%;
+	top: 50%;
+	-webkit-transform: skew(-145deg, 0deg);
+	-ms-transform: skew(-145deg, 0deg);
+	transform: skew(-145deg, 0deg);
+}
+
+

@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projects | Center for R&amp;D on Secure Computer Systems (CRADSEC)</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="author" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta name="coyright" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta property="og:site_name" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta property="og:title" content="Projects | Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cradsec.rois.ac.jp/en/project/index.html">
+<meta property="og:image" content="https://cradsec.rois.ac.jp/common/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects | Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://cradsec.rois.ac.jp/en/project/index.html">
+
+<link rel="stylesheet" href="../../common/css/style.css">
+</head>
+
+<body id="wapper" class="en sec prj">
+  <header id="header">
+    <div class="inr">
+      <div class="title">
+		<div class="logo"><img src="../../common/img/logo.svg" alt="Cradsec" width="180" height="40"></div>
+        <h1><a href="../index.html">Center for R&amp;D on Secure Computer Systems</a></h1>
+        	<span>
+        		<strong>Development of Universal TEE Architecture<br>
+        		with a Trinity of Hardware, Software, and Theory</strong><br>
+        		Center for Research and Development on Secure Computer Systems, Japan
+        	</span>
+      </div>
+      <nav id="nav" class="dl-menuwrapper">
+        <button class="menu_trigger">Open Menu
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="menu">
+          <li><a href="../overview/index.html">Overview</a></li>
+          <li class="current"><a href="../project/index.html">Projects</a></li>
+          <li><a href="../member/index.html">Members</a></li>
+          <li><a href="../publication/index.html">Publications</a></li>
+          <li><a href="../event/index.html">Events</a></li>
+          <li><a href="../access/index.html">Access</a></li>
+          <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>
+        </ul><!-- // .menu -->
+      </nav><!-- // #nav -->
+      <div class="lang">
+		<a href="../../jp/project/index.html">JP</a>
+      </div>
+    </div>
+  </header>
+  <div class="layer close"></div>
+
+  <main id="main">
+    <div class="mainimg_bg">
+		<div class="section_inr">
+			<h2>Projects</h2>
+		</div>
+	</div>
+	<div class="bread">
+		<div class="inr">
+			<ul class="flexbox_wap">
+				<li><a href="../index.html">HOME</a></li>
+				<li>Projects</li>
+			</ul>
+		</div>
+	</div>
+<!--▼ここから▼-->
+    <div id="contents">
+      <div class="section_inr">
+		<div class="page">
+		<h3 id="prj01">Hardware (HW)</h3>
+			<p>
+				The requirements for protection models supported by UTA can be summarized in two points:
+			</p>
+			<ol>
+				<li><strong>High flexibility</strong>, enabling the construction of any protection domain.</li>
+				<li><strong>Resistance to side-channel attacks</strong> on data flowing between chips, including I/O devices and memory, provided at sufficiently low cost.</li>
+			</ol>
+			<p>
+				The TEE hardware must provide system software with TEE primitives that satisfy these two requirements. These primitives can be divided into three components: (i) a memory protection mechanism forming the basis of the TEE, (ii) authenticated memory encryption to prevent eavesdropping and tampering on memory chips, and (iii) secure I/O channels that enable secure I/O with low overhead. The effectiveness of these technologies, each developed through dedicated research, will be demonstrated by implementing a multicore SoC hardware compliant with the RISC-V architecture. Verification will first be carried out in an FPGA environment (Figure 1), followed by the construction of a prototype chip–based environment.
+			</p>
+			<p>
+				<figure>
+					<img src="../../common/img/figure1_en.png" alt="" width="700" height="354">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: Elimination of Trusted Code</figcaption>
+				</figure>
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj02">System Software (OS)</h3>
+			<p>
+				Since the threat models required by TEE users vary, we aim to realize a Software-Defined TEE, where the functions provided by the TEE can be flexibly implemented in software. To this end, we will develop system software that enables flexible TEE configurations through hardware/software co-design with the TEE hardware. Specifically, we will achieve the following three objectives:
+			</p>
+			<ol>
+				<li><strong>Provision of a hardware emulation environment</strong><br>
+				Since availability of the UTA hardware will be later, we are extending the open-source emulator QEMU to emulate the UTA hardware under development in software. The extended QEMU will be released as open source, promoting software development on new TEE hardware.</li>
+				<li><strong>Provision of a compatible environment with existing TEEs</strong><br>
+				Using the UTA hardware, widely used practical TEE interfaces such as Intel SGX and Arm TrustZone will be realized as software modules. By releasing these modules as open source, we aim to attract existing TEE users.</li>
+				<li><strong>Provision of innovative protection domain configurations</strong><br>
+				We will introduce new protection domain configurations that address threat models not supported by existing TEEs due to hardware limitations. Especially, nested protection domains are difficult to implement in conventional TEEs. By including such models, we will demonstrate that configurations unsupported by current TEEs can be realized on UTA. Diverse protection domains will first be constructed in the QEMU environment, and some of them will be targeted for implementation on FPGA boards and prototype chip environments.</li>
+			</ol>
+		</div>
+
+		<div class="page">
+		<h3 id="prj03">Theory (Th)</h3>
+			<p>
+				UTA aims to protect a user’s assets within application pro-grams against anticipated threats. Achieving such protection requires the system software to construct an appropriate protection model using the TEE primitives provided by the hardware. Consequently, to ensure that assets are safe-guarded as intended, every layer of UTA—the hardware, system software, and user application—must be correct.<br>
+				We plan to achieve this goal through formal verification. However, verifying the entire architecture monolithically is infeasible due to its complexity. Furthermore, we cannot assume a fixed application program because it varies with each use case. To address these challenges, we seek to de-compose the overall verification task of UTA into verifica-tion problems of individual components. Specifically, we will investigate two forms of modular verification with security in mind:
+			</p>
+			<ol>
+				<li><strong>Inter-layer verification</strong><br>
+					The correctness of a higher layer depends on the correctness of the functionalities provided by the lower layer. For in-stance, the correctness of an application program depends on that of the system software, which in turn depends on that of the hardware. To enable layer-by-layer verification, we introduce a specification interface for each layer and verify that each layer satisfies its specification under the interface provided by the lower layer. This inter-layer modularity also reduces the verification cost of modifying application programs because we only re-verify the changed applica-tions and the verification of the other layers can remain unchanged. Because the interfaces of different layers are often described in different specification languages, we will study methods to bridge the gap between them.</li>
+				<li><strong>Intra-layer verification</strong><br>
+					Each layer may itself comprise multiple modules. For example, system software typically consists of many C source files. To scale verification, we also aim to pursue modular verification within individual layers. For system software, this requires modular verification of low-level programs that use complex features such as memory and resource management, interrupt handling, and concurrency. For hardware, it is worth exploring modular verification techniques applicable to hardware description languages such as Verilog.
+				</li>
+			</ol>
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj04">Attestation (ATT)</h3>
+			<p>
+				IETF RFC 9334 (<em>Remote ATtestation Procedures Architecture (RATS)</em>) defines remote attestation as a process in which one peer (the "Attester") produces believable information about itself ("Evidence") to enable a remote peer (the "Relying Party") to decide whether to consider that Attester a trustworthy peer. This procedure is facilitated by an additional vital party (the "Verifier").<br>
+				Remote attestation faces several technical challenges:
+			</p>
+			<ol>
+				<li><strong>Suitability for use cases</strong><br>
+				IETF RATS does not prescribe the specific contents of the evidence. This is because the evidence depends on the use case, such as VMs or microservices. Moreover, RATS does not specify performance requirements for the Verifier when handling large numbers of microservices.</li>
+				<li><strong>Scalability and lightweight operation</strong><br>
+				As TEEs become more widely adopted, the demand for remote attestation will grow, raising concerns about increased load on Verifiers. Since Verifiers hold sensitive information, their capacity cannot be simply expanded with proxies. Therefore, lightweight signature schemes suited to device capabilities, as well as clear definitions of the necessary verification items depending on use cases, are required.</li>
+				<li><strong>Privacy protection</strong><br>
+				As noted above, evidence is transmitted to the Verifier. However, such evidence may reveal device configurations or even allow identification of the user, raising privacy concerns. While <strong>DAA (Direct Anonymous Attestation)</strong> already provides an anonymization mechanism, it focuses mainly on device authenticity and does not thoroughly address other verification items, such as binary hashes or configuration information.</li>
+			</ol>
+			<p>
+				In this project, we will investigate the use cases and practices of remote attestation from the perspectives of suitability for purpose, scalability and lightweight operation, and privacy protection. Based on this investigation, we will develop guidelines, publish them, and work toward establishing them as standard guidelines.<br>
+				Furthermore, drawing on the above study, we will develop remote attestation software for the proposed <strong>UTA</strong>, and evaluate its functionality and performance. The developed software will be released as open source, with careful consideration for secure management.
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj05">Middleware (MW)</h3>
+				<figure class="fR mL1em zu">
+					<img src="../../common/img/figure2_en.png" alt="" width="350" height="433">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: Portable Confidential Computing Environment</figcaption>
+				</figure>
+			<p>
+				Data involving privacy and other sensitive information that must be protected is now distributed across all types of platforms, including the cloud, PCs, IoT devices, and embedded systems. To achieve end-to-end data protection, it is essential to realize TEEs on these platforms. In cloud environments, Confidential Computing, which leverages TEEs, has been attracting significant attention. Confidential Computing is an execution model that protects both data and its processing by using hardware-based, attestable Trusted Execution Environments (TEEs). Ideally, Confidential Computing environments should be realized across all platforms.<br>
+				To this end, we are developing the <strong>Portable Confidential Computing Environment (PCCE)</strong>, an execution environment that enables easy use of Confidential Computing across diverse TEE hardware, including UTA.<br>
+				As shown in Figure 2, PCCE adopts WebAssembly (Wasm) as its foundation. Wasm is a fast and secure binary virtual instruction set, for which multiple runtimes (Wasm virtual machines) are available across heterogeneous hardware platforms. By leveraging Wasm virtual machines, PCCE eliminates hardware and OS dependencies while also providing execution environment isolation through Wasm sandboxing.<br>
+				PCCE provides mechanisms to mutually verify trust relationships (dotted arrows in Figure 2) among (i) the <strong>Wasm Virtual Machine</strong> deployed inside the TEE hardware, (ii) Wasm applications (<strong>Wasm binaries</strong>) running on the Wasm virtual machine, and (iii) applications (<strong>Local and Remote applications</strong>) that make use of them. Software developed on PCCE will run not only on the UTA but also on existing TEEs. In PCCE, we further define two <strong>Interface Definition Languages (IDLs)</strong>, both implemented with the Clang compiler: one for constructing native execution libraries used by Wasm applications, and another for abstracting the different TEE application APIs that vary across TEE architectures. 
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj06">Proof of Concept (PoC)</h3>
+			<p>
+				We propose <strong>Mobile Trunk</strong>, an encrypted file format that encapsulates both encrypted data and the Wasm code (as shown in Figure 3) required for its decryption and processing. The sender converts confidential data into a Mobile Trunk. The Mobile Trunk file itself is encrypted and can only be decrypted with a key stored either in the TEE runtime within the PCC or in secure storage on the conventional OS side. Moreover, the Wasm code for decrypting the encrypted data is restricted to run only in execution environments that satisfy the trust level specified by the creator (described later). Consequently, the Mobile Trunk can be safely delivered to recipients even through channels that are not inherently secure, such as e-mail.
+			</p>
+			<div class="two_fig flexbox_cwap">
+				<figure>
+					<img src="../../common/img/figure3_en.png" alt="" width="300" height="196">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: Mobile Trunk</figcaption>
+				</figure>
+				<figure>
+					<img src="../../common/img/figure4_en.png" alt="" width="365" height="196">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: Use Case: Expiration Check and Authentication Request</figcaption>
+				</figure>
+			</div>
+			<p>
+				The concept is demonstrated by presenting several use cases as follows. The first use case shown in Figure 3 is includes data expiration checking and authentication request processing. The code first verifies the trusted current time provided by TEE and the validity of the document’s expiration, and then send the authentication code via SMS for further processing. Figures 5 through 7 present examples in which the execution environment is verified prior to deciding whether to decrypt the data. In Figure 5, this Mobile Trunk allows execution only when it is running in a TEE environment within a Secure VM on the cloud. Figures 6 and 7 illustrate an example in which Mobile Trunk verifies whether the PC used for execution is workplace hardware and enforces execution control accordingly.
+			</p>
+			<div class="three_fig flexbox_cwap">
+				<figure>
+					<img src="../../common/img/figure5_en.png" alt="" width="280" height="260">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: on Cloud</figcaption>
+				</figure>
+				<figure>
+					<img src="../../common/img/figure6_en.png" alt="" width="255" height="260">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: On Workplace</figcaption>
+				</figure>
+				<figure>
+					<img src="../../common/img/figure7_en.png" alt="" width="280" height="260">
+					<figcaption class="tC">Figure <div class="js-counter"></div>: Outside Workplace</figcaption>
+				</figure>
+			</div>
+		</div>
+		
+		
+      </div><!-- // .section_inr -->
+    </div><!-- // #outline -->
+<!--▲ここまで▲-->
+
+  </main>
+  <footer id="footer">
+    <p id="page-top" style="display: block;"><a href="#wapper"></a></p>
+  </footer>
+  <script src="../../common/js/jquery.js"></script>
+  <script src="../../common/js/cmn.js"></script>
+  <script type="text/javascript">
+	const counters = document.querySelectorAll('.js-counter');
+  counters.forEach((counter, index) => {
+    const count = (index + 1).toString().padStart(1, '0');
+    counter.textContent = count;
+  });
+</script>
+</body>
+
+</html>

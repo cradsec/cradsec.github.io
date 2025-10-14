@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Overview | Center for R&amp;D on Secure Computer Systems (CRADSEC)</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="author" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta name="coyright" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta property="og:site_name" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta property="og:title" content="Overview | Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cradsec.rois.ac.jp/en/overview/index.html">
+<meta property="og:image" content="https://cradsec.rois.ac.jp/common/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Overview | Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://cradsec.rois.ac.jp/en/overview/index.html">
+
+<link rel="stylesheet" href="../../common/css/style.css">
+</head>
+
+<body id="wapper" class="en sec">
+  <header id="header">
+    <div class="inr">
+      <div class="title">
+		<div class="logo"><img src="../../common/img/logo.svg" alt="Cradsec" width="180" height="40"></div>
+        <h1><a href="../index.html">Center for R&amp;D on Secure Computer Systems</a></h1>
+      </div>
+      <nav id="nav" class="dl-menuwrapper">
+        <button class="menu_trigger">Open Menu
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="menu">
+          <li class="current"><a href="../overview/index.html">Overview</a></li>
+          <li><a href="../project/index.html">Projects</a></li>
+          <li><a href="../member/index.html">Members</a></li>
+          <li><a href="../publication/index.html">Publications</a></li>
+          <li><a href="../event/index.html">Events</a></li>
+          <li><a href="../access/index.html">Access</a></li>
+          <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>
+        </ul><!-- // .menu -->
+      </nav><!-- // #nav -->
+      <div class="lang">
+		<a href="../../jp/overview/index.html">JP</a>
+      </div>
+    </div>
+  </header>
+  <div class="layer close"></div>
+
+  <main id="main">
+    <div class="mainimg_bg">
+		<div class="section_inr">
+			<h2>Overview</h2>
+		</div>
+	</div>
+	<div class="bread">
+		<div class="inr">
+			<ul class="flexbox_wap">
+				<li><a href="../index.html">HOME</a></li>
+				<li>Overview</li>
+			</ul>
+		</div>
+	</div>
+<!--▼ここから▼-->
+    <div id="contents">
+      <div class="section_inr">
+		<p>
+			We aim to realize a unified TEE architecture that can flexibly operate across diverse platforms ranging from IoT devices to the cloud. This architecture will allow the selection of appropriate enclave configurations and protection mechanisms according to specific requirements and threat models, while taking into account trade-offs among security, performance, and energy consumption.<br>
+			From the hardware perspective, we will provide highly versatile TEE primitives. Using these primitives, system software will be able to flexibly configure protection domains. From the theoretical perspective, we will develop formal verification techniques to ensure that the protection domains built on top of the TEE primitives are provably secure against the assumed threat models.<br>
+			Furthermore, we will develop a software environment that enables secure execution of advanced cryptographic operations on the proposed TEE. As a proof of concept (PoC), we will prototype applications that realize secure data distribution.<br>
+			All developed artifacts will be released as open source including hardware IPs.
+		</p>
+
+		<h3>TEE and Its Issues</h3>
+		<p>
+			As shown in Table 1, each vendor provides its own protection model tailored to the typical requirements and threat models of its platform.
+		</p>
+		<p>
+			<figure>
+				<figcaption class="tC">Table 1: Comparison of TEEs</figcaption>
+				<img src="../../common/img/table1_en.png" alt="" width="700" height="305">
+			</figure>
+		</p>
+		<p>
+			<strong>Intel SGX</strong> primarily targets servers and desktops, where part of a process’s memory region is designated as an enclave. Within this enclave, application code and data are protected from an untrusted operating system. The earlier version of SGX supported <strong>integrity assurance</strong> against memory side-channel attacks with an integrity tree. However, the later version, along with most other TEEs, do not support an integrity tree probably for performance reasons.<br>
+			<strong>Arm TrustZone</strong> partitions a device into two execution environments, referred to as the secure world and the non-secure world. It protects the code and data executed in the secure world, including applications and a trusted OS, from access by applications and operating systems running in the non-secure world, primarily through hardware-enforced access control.<br>
+			More recently, technologies such as <strong>AMD SEV, Intel TDX, and Arm CCA</strong> have drawn attention in server and cloud environments, focusing on protecting virtual machines (guest OSes) from untrusted hypervisors.<br>
+			As shown above, hardware vendors provide proprietary protection models, leading to the following issues:
+		</p>
+		<ol>
+			<li><strong>Limited portability</strong>: Software built for one TEE hardware is difficult to port to another, as the differences are deeper than ISA-level and cannot be solved by recompilation from source codes.</li>
+			<li><strong>Threat model mismatch</strong>: If the system designer’s threat model differs from that assumed by the TEE hardware, the required level of protection may not be achieved, making the TEE effectively unusable.</li>
+		</ol>
+		
+		<h3>Universal TEE Architecture</h3>
+		<p>
+			To overcome the above-described issues, we aim to realize the <strong>Universal TEE Architecture (UTA)</strong> that is designed to be <em>single, flexible, and formally secure</em>, where a TEE architecture refers to the combined design specification of both TEE hardware and system software:
+		</p>
+		<ul>
+			<li><strong>Single and Flexible</strong>: Although the architecture is unified, it can still provide appropriate protection models adapted to specific requirements and threat models, balancing tradeoffs among security, performance, and energy consumption.</li>
+			<li><strong>Formally Secure</strong>: By exploiting the unified architecture, this project develops formal verification methods that guarantee any protection model selected by the user satisfies the required security properties.</li>
+		</ul>
+		<p>
+			The realization of such a UTA is expected to bring the following benefits:
+		</p>
+		<ol>
+			<li>Compatibility with existing TEEs, which expands the range of options available to current users.</li>
+			<li>Broader adoption among potential users, since TEEs can be aligned with their specific requirements and threat models.</li>
+			<li>Improved overall security through compliance with a single TEE architecture, which would centralize resources and strengthen security at the societal level, as already practiced in cryptography with AES and other widely adopted standards.</li>
+		</ol>
+      </div><!-- // .section_inr -->
+    </div><!-- // #outline -->
+<!--▲ここまで▲-->
+
+  </main>
+  <footer id="footer">
+    <p id="page-top" style="display: block;"><a href="#wapper"></a></p>
+  </footer>
+  <script src="../../common/js/jquery.js"></script>
+  <script src="../../common/js/cmn.js"></script>
+</body>
+
+</html>
