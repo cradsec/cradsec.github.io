@@ -1351,3 +1351,27 @@ th,td {
   border-right: 2px solid #000;
   transform: rotate(135deg);
 }
+
+.event #contents dl {
+  margin-bottom:0.5em;
+}
+
+.event #contents dt {
+  font-weight:bold;
+  color:var(--maincolor);
+}
+
+.event #contents dt:before {
+  content:"●";
+  font-size:1.2rem;
+  color:var(--maincolor);
+  margin-right:5px;
+}
+
+.event #contents dd {
+  margin-left:2em;
+}
+
+.publication #contents ol {
+  margin-bottom:2em;
+}
