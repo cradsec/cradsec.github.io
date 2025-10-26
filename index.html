@@ -14,11 +14,13 @@
   var m = document.cookie.match(/(?:^|;\s*)lang=(en|jp)\b/);
   if (m) { location.replace('/' + m[1] + '/index.html'); return; }
 
-  // ブラウザ言語を見て英語系なら en、それ以外は jp
   var lang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
   lang = (lang || '').toLowerCase();
-  var dest = lang.startsWith('en') ? 'en' : 'jp';
+  // ブラウザ言語を見て英語系なら en、それ以外は jp
+  //var dest = lang.startsWith('en') ? 'en' : 'jp';
   //var dest = 'en';
+  // ブラウザ言語を見てjpなら jp、それ以外は en
+  var dest = lang.startsWith('jp') ? 'jp' : 'en';
 
   // 1年記憶（手動切替と共存）
   // document.cookie = 'lang=' + dest + '; Path=/; Max-Age=31536000';
