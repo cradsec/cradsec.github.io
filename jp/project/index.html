@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="../../common/css/style.css">
 </head>
 
-<body id="wapper" class="sec jp">
+<body id="wapper" class="sec jp prj">
   <header id="header">
     <div class="inr">
       <div class="title">
@@ -65,13 +65,157 @@
 		</div>
 	</div>
 <!--▼ここから▼-->
-    <div id="contents" class="prj">
+    <div id="contents">
       <div class="section_inr">
-		<p><A HREF=../../en/project/index.html>英語ページをご覧ください</p>
+		<div class="page">
+		<h3 id="prj01">Hardware (HW)</h3>
+			<p>
+				UTA（Universal TEE Architecture）がサポートすべき保護モデルの要件は、以下の2点に要約されます。
+			</p>
+			<ol>
+				<li><strong>高い柔軟性</strong> — あらゆる保護ドメインを構築できること。</li>
+				<li><strong>サイドチャネル攻撃への耐性</strong> — I/Oデバイスやメモリなど、チップ間を流れるデータに対する耐サイドチャネル攻撃を低コストで実現すること。</li>
+			</ol>
+			<p>
+				開発するTEEハードウェアは、これら2つの要件を満たすTEEプリミティブ (図 1) をシステムソフトウェアに提供します。これらプリミティブは、次の3つの要素に分類されます。<br>
+        (i) TEEの基盤となるメモリ保護機構<br>
+        (ii) メモリチップに対する盗聴や改ざんを防止する認証付きメモリ暗号化<br>
+        (iii) 低オーバーヘッドで安全な入出力を実現するセキュアI/Oチャネル<br>
+        これらの技術の有効性をRISC-Vアーキテクチャ準拠のマルチコアSoCハードウェアに実装することによって実証します。検証はまずFPGA環境で実施し、その後、試作チップベースの環境を構築して評価します。
+			</p>
+			<p>
+				<figure>
+					<img src="../../common/img/figure1_en.png" alt="" width="700" height="354">
+					<figcaption class="tC">図<div class="js-counter"></div>　Trusted Code依存の除去</figcaption>
+				</figure>
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj02">System Software (OS)</h3>
+			<p>
+				TEEの利用者が想定する脅威モデルは多様であるため、TEEが提供する機能をソフトウェアで柔軟に実装できるSoftware-Defined TEEの実現を目指します。この目的のために、ハードウェアとソフトウェアの協調設計（co-design）によって、柔軟なTEE構成を可能にするシステムソフトウェアを開発します。具体的には、次の3つの目標に取り組みます。
+			</p>
+			<ol>
+				<li><strong>ハードウェアエミュレーション環境の提供</strong><br>
+				UTAハードウェアの実機は本プロジェクトの後半にならないと利用できないため、現在開発中のUTAハードウェアをエミュレーションするエミュレーションソフトウェアを開発します。このために、オープンソースエミュレータであるQEMUを拡張しています。今後、拡張版QEMUはオープンソースとして公開し、新しいTEEハードウェア上でのソフトウェア開発を促進します。</li>
+				<li><strong>既存TEEとの互換環境の提供</strong><br>
+				UTAハードウェアを用いて、広く実用化されているIntel SGXやArm TrustZoneなどのTEEインターフェースをソフトウェアモジュールとして実現します。これらのモジュールをオープンソースとして公開することで、既存のTEEユーザを取り込みます。</li>
+				<li><strong>革新的な保護ドメイン構成の提供</strong><br>
+				既存TEEがハードウェア制約のために対応できなかった脅威モデルに対して、新たな保護ドメイン構成を導入します。特に、入れ子構造（ネスト型）保護ドメインは従来のTEEでは実装が困難でしたが、UTAではこれを含む新しい構成を実現します。これにより、従来TEEでは不可能だった保護モデルがUTA上で実現可能であることを示します。<br>
+        多様な保護ドメイン構成はまずQEMU環境上で構築され、その一部はFPGAボードや試作チップ環境への実装対象として選定される予定です。</li>
+			</ol>
+		</div>
+
+		<div class="page">
+		<h3 id="prj03">Theory (Th)</h3>
+			<p>
+				UTA（Universal TEE Architecture）は、アプリケーションプログラム内で、想定される脅威からユーザの資産を保護することを目的としています。このような保護を実現するためには、システムソフトウェアが、ハードウェアが提供するTEEプリミティブを用いて適切な保護モデルを構築する必要があります。ユーザ資産が意図どおりに保護されるためには、UTAを構成するすべての層（ハードウェア、システムソフトウェア、ユーザーアプリケーション）が意図通りに実現されていることが求められます。
+      </p>
+      <p>
+        意図通りに実現されていることを保証するために、私たちは、形式検証（formal verification）技術を進化させます。アーキテクチャ全体を一体的（モノリシック）に検証するのは複雑すぎて実現不可能です。アプリケーションプログラムはユースケースごとに異なるため、特定の固定アプリケーションを前提にすることもできません。これらの課題に対応するため、UTA全体の検証タスクを個々のコンポーネント単位に分割し、モジュールごとの検証問題として扱うことを目指します。特に、セキュリティを考慮した2つのモジュール型検証手法を検討します。
+			</p>
+			<ol>
+				<li><strong>レイヤ間検証（Inter-layer verification）</strong><br>
+					上位レイヤの正しさは、下位レイヤが提供する機能の正しさに依存します。例えば、アプリケーションプログラムの正しさはシステムソフトウェアの正しさに、システムソフトウェアの正しさはハードウェアの正しさに依存します。このようなレイヤごとの検証を可能にするために、各レイヤに仕様インターフェース（specification interface）を導入し、下位レイヤが提供するインターフェースのもとで各レイヤがその仕様を満たしていることを検証します。<br>
+          このレイヤ間のモジュール化によって、アプリケーションプログラムを変更した際の検証コストを低減できます。変更のあったアプリケーション部分のみを再検証すればよく、他のレイヤの検証結果は再利用できます。なお、異なるレイヤのインターフェースはしばしば異なる仕様記述言語で記述されるため、これらの間を橋渡しする手法の研究も行います。</li>
+				<li><strong>レイヤ内検証（Intra-layer verification）</strong><br>
+					各レイヤ自体も複数のモジュールから構成される場合があります。例えば、システムソフトウェアは多くのC言語ソースファイルで構成されています。検証のスケーラビリティを高めるため、個々のレイヤの内部でもモジュールごとの形式検証を追求します。<br>
+          システムソフトウェアの場合、メモリや資源管理、割り込み処理、並行実行といった複雑な機能を用いる低レベルプログラムのモジュール検証が求められます。またハードウェアについては、Verilogなどのハードウェア記述言語に適用可能なモジュール型検証技術の研究を進める価値があります。
+				</li>
+			</ol>
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj04">Attestation (ATT)</h3>
+			<p>
+				IETF RFC 9334（Remote ATtestation Procedures Architecture、略称RATS）では、リモートアテステーションを次のように定義しています。<br>
+        「ある主体（“Attester”）が、自身に関する信頼できる情報（“Evidence”）を生成し、遠隔の主体（“Relying Party”）はその情報を元に、Attesterを信頼すべき相手とみなすかどうかを判断するプロセス」<br>
+        このプロセスを支援するために、もう1つの重要な主体として“Verifier”が存在します。リモートアテステーションには、以下のような技術的課題があります。
+			</p>
+			<ol>
+				<li><strong>ユースケースへの適合性</strong><br>
+				IETF RATSは、Evidence（証拠）の具体的な内容を規定していません。これは、仮想マシン（VM）やマイクロサービスなど、ユースケースごとにEvidenceの内容が異なるためです。さらに、RATSは多数のマイクロサービスを扱う場合のVerifier（検証者）の性能要件についても規定していません。</li>
+				<li><strong>スケーラビリティと軽量な運用</strong><br>
+				TEE（Trusted Execution Environment）の普及に伴い、リモートアテステーションの需要は拡大し、Verifierへの負荷増大が懸念されます。Verifierは機密情報を保持しているため、単純にプロキシなどでスケールアウトすることは困難です。したがって、デバイス性能に適した軽量な署名方式や、ユースケースごとに必要な検証項目を明確化する定義が求められます。</li>
+				<li><strong>プライバシー保護</strong><br>
+				前述のように、EvidenceはVerifierへ送信されます。しかし、このEvidenceにはデバイス構成情報が含まれることがあり、ユーザの特定が可能となるなど、プライバシー上の懸念があります。DAA（Direct Anonymous Attestation）は匿名化機構を提供していますが、主にデバイスの真正性に焦点を当てており、バイナリハッシュや構成情報など、他の検証項目については十分に対処していません。</li>
+			</ol>
+			<p>
+				本プロジェクトでは、リモートアテステーションのユースケース適合性、スケーラビリティと軽量化、およびプライバシー保護の観点から、その利用実態と課題を調査します。その結果に基づき、ガイドラインを策定・公開し、標準的な指針としての確立を目指します。
+      </p>
+      <p>
+        さらに、上記の研究成果を踏まえ、提案するUTA向けのリモートアテステーションソフトウェアを開発し、その機能と性能を評価します。開発したソフトウェアは、安全な管理を考慮したうえでオープンソースとして公開する予定です。
+			</p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj05">Middleware (MW)</h3>
+				<figure class="fR mL1em zu">
+					<img src="../../common/img/figure2_en.png" alt="" width="350" height="433">
+					<figcaption class="tC">図 <div class="js-counter"></div> Portable Confidential Computing Environment</figcaption>
+				</figure>
+			<p>
+				プライバシー情報など機微な情報を含むデータは、クラウド、PC、IoTデバイス、組込みシステムなど、あらゆる種類のプラットフォーム上に分散しています。こうしたデータのエンドーエンド保護を実現するためには、これらの各プラットフォーム上でTEE（Trusted Execution Environment）を実現することが不可欠です。<br>
+        クラウド環境においては、TEEを活用したConfidential Computing（機密コンピューティング）が大きな注目を集めています。機密コンピューティングとは、ハードウェアベースでアテステーション可能なTEEを利用することで、データそのものとその処理過程の双方を保護する実行モデルです。理想的には、Confidential Computing環境はあらゆるプラットフォームにおいて実現されるべきものです。<br>
+        この目的のために、私たちはPortable Confidential Computing Environment（PCCE）を開発しています。PCCEは、UTAを含む多様なTEEハードウェア上でConfidential Computingを容易に利用できる実行環境です。
+			</p>
+      <p>
+        図2に示すように、PCCEはWebAssembly（Wasm）を基盤として採用しています。Wasmは、高速かつ安全なバイナリ仮想命令セットであり、異種ハードウェア環境に対応する複数のランタイム（Wasm仮想マシン）が存在します。Wasm仮想マシンを活用することで、PCCEはハードウェアやOSへの依存を排除し、さらに、Wasmが提供するサンドボックス機能により実行環境の分離も提供します。
+      </p>
+      <p>
+        PCCEは、次の3者間における相互信頼関係の検証メカニズム（図2中の点線矢印）を備える予定です。<br>
+        (i) TEEハードウェア内に配置されたWasm仮想マシン<br>
+        (ii) その仮想マシン上で動作するWasmアプリケーション（Wasmバイナリ）<br>
+        (iii) それらを利用するローカルおよびリモートのアプリケーション<br>
+        PCCE上で開発されたソフトウェアは、UTA上だけでなく既存のTEE上でも動作可能にします。さらにPCCEでは、2種類のインタフェース定義言語（IDL）を定義します。1つはWasmアプリケーションが利用するネイティブ実行ライブラリを構築するためのIDL、もう1つはTEEアーキテクチャごとに異なるTEEアプリケーションAPIを抽象化するためのIDLです。
+      </p>
+		</div>
+
+		<div class="page">
+		<h3 id="prj06">Proof of Concept (PoC)</h3>
+			<p>
+				私たちは、Mobile Trunkという暗号化ファイル形式を提案します。これは、図3に示すように、暗号化されたデータ本体と、それを復号し何らかのデータ処理を行うWasmコード、の２つを一つのファイルにカプセル化した形式です。送信者は、機密データをMobile Trunk形式に変換します。<br>
+        Mobile Trunkファイル自体は暗号化されており、PCCE内のTEEランタイムまたは従来のOS側のセキュアストレージに格納された鍵によってのみ復号することができます。さらに、暗号化データを復号するためのWasmコードは、作成者が指定した信頼レベル（後述）を満たす実行環境内でのみ実行できるように制限されます。この結果、Mobile Trunkは、電子メールなど安全でない通信経路を経由しても安全に受信者へ配信できる形式となっています。
+			</p>
+			<div class="two_fig flexbox_cwap">
+				<figure>
+					<img src="../../common/img/figure3_en.png" alt="" width="300" height="196">
+					<figcaption class="tC">図 <div class="js-counter"></div> Mobile Trunk</figcaption>
+				</figure>
+				<figure>
+					<img src="../../common/img/figure4_en.png" alt="" width="365" height="196">
+					<figcaption class="tC">図 <div class="js-counter"></div> ユースケース：有効期限チェックおよび認証要求処理</figcaption>
+				</figure>
+			</div>
+			<p>
+				Mobile Trunkのユースケースを示します。最初のユースケース（図3）は、データの有効期限確認と認証要求処理を含む例です。Mobile Trunk内の実行コードは、まず、TEEが提供する信頼できる現在時刻を用いて文書の有効期限を検証し、その後、認証コードをSMSで送信して後続の処理を行います。
+      </p>
+      <p>
+        図5〜図7では、データを復号するかどうかを判断する前に実行環境を検証するユースケースの例です。<br>
+        図5では、このMobile Trunkは、クラウド上のセキュアVM内にあるTEE環境で実行されている場合にのみ動作を許可します。<br>
+        図6および図7では、実行に使用されているPCが職場のハードウェアであるかどうかをMobile Trunkが検証し、結果に応じて実行を制御する例が示されています。
+			</p>
+			<div class="three_fig flexbox_cwap">
+				<figure>
+					<img src="../../common/img/figure5_en.png" alt="" width="280" height="260">
+					<figcaption class="tC">図 <div class="js-counter"></div> クラウド</figcaption>
+				</figure>
+				<figure>
+					<img src="../../common/img/figure6_en.png" alt="" width="255" height="260">
+					<figcaption class="tC">図 <div class="js-counter"></div> 仕事場</figcaption>
+				</figure>
+				<figure>
+					<img src="../../common/img/figure7_en.png" alt="" width="280" height="260">
+					<figcaption class="tC">図 <div class="js-counter"></div> 自宅</figcaption>
+				</figure>
+			</div>
+		</div>
 		
 		
       </div><!-- // .section_inr -->
-    </div><!-- // #outline -->
+    </div><!-- // -->
 <!--▲ここまで▲-->
 
   </main>
@@ -80,6 +224,13 @@
   </footer>
   <script src="../../common/js/jquery.js"></script>
   <script src="../../common/js/cmn.js"></script>
+  <script type="text/javascript">
+	const counters = document.querySelectorAll('.js-counter');
+  counters.forEach((counter, index) => {
+    const count = (index + 1).toString().padStart(1, '0');
+    counter.textContent = count;
+  });
+</script>
 </body>
 
 </html>
