@@ -1082,7 +1082,7 @@ footer {
 }
 
 footer:after {
-	content:"© Center for R&D on Secure Computer Systems, cradsec-info@rois.ac.jp";
+	content:"© Center for R&D on Secure Computer Systems,&nbsp;&nbsp; cradsec-info@rois.ac.jp";
 	width:100%;
 	background: var(--maincolor);
 	text-align:center;
