@@ -36,8 +36,20 @@
         <ul class="menu">
           <li class="current"><a href="../overview/index.html">Overview</a></li>
           <li><a href="../project/index.html">Projects</a></li>
+          <li><a href="../software/index.html">Open Source</a></li>
           <li><a href="../member/index.html">Members</a></li>
-          <li><a href="../publication/index.html">Publications</a></li>
+          <li class="has-submenu">
+              <button class="submenu-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="publication-menu">
+                Publications <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <ul id="publication-menu" class="submenu">
+                <li><a href="../publication/index.html">Publications (All)</a></li>
+                <li><a href="../publication/year.html">Publications (By Year)</a></li>
+                <li><a href="../publication/theme.html">Publications (By Topic)</a></li>
+                <!--li><a href="../publication/award.html">Awards</a></li-->
+                <li><a href="../software/index.html">Open Source</a></li>
+              </ul>
+          </li>
           <li><a href="../event/index.html">Events</a></li>
           <li><a href="../access/index.html">Access</a></li>
           <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>

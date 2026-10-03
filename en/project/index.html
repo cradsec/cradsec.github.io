@@ -41,8 +41,20 @@
         <ul class="menu">
           <li><a href="../overview/index.html">Overview</a></li>
           <li class="current"><a href="../project/index.html">Projects</a></li>
+          <li><a href="../software/index.html">Open Source</a></li>
           <li><a href="../member/index.html">Members</a></li>
-          <li><a href="../publication/index.html">Publications</a></li>
+          <li class="has-submenu">
+              <button class="submenu-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="publication-menu">
+                Publications <span class="arrow" aria-hidden="true">▼</span>
+              </button>
+              <ul id="publication-menu" class="submenu">
+                <li><a href="../publication/index.html">Publications (All)</a></li>
+                <li><a href="../publication/year.html">Publications (By Year)</a></li>
+                <li><a href="../publication/theme.html">Publications (By Topic)</a></li>
+                <!--li><a href="../publication/award.html">Awards</a></li-->
+                <li><a href="../software/index.html">Open Source</a></li>
+              </ul>
+          </li>
           <li><a href="../event/index.html">Events</a></li>
           <li><a href="../access/index.html">Access</a></li>
           <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>
@@ -82,7 +94,7 @@
 				<li><strong>Resistance to side-channel attacks</strong> on data flowing between chips, including I/O devices and memory, provided at sufficiently low cost.</li>
 			</ol>
 			<p>
-				The TEE hardware must provide system software with TEE primitives (Figure 1) that satisfy these two requirements. These primitives can be divided into three components: (i) a memory protection mechanism forming the basis of the TEE, (ii) authenticated memory encryption to prevent eavesdropping and tampering on memory chips, and (iii) secure I/O channels that enable secure I/O with low overhead. The effectiveness of these technologies, each developed through dedicated research, will be demonstrated by implementing a multicore SoC hardware compliant with the RISC-V architecture. Verification will first be carried out in an FPGA environment, followed by the construction of a prototype chip–based environment.
+				The TEE hardware must provide system software with TEE primitives that satisfy these two requirements. These primitives can be divided into three components: (i) a memory protection mechanism forming the basis of the TEE, (ii) authenticated memory encryption to prevent eavesdropping and tampering on memory chips, and (iii) secure I/O channels that enable secure I/O with low overhead. The effectiveness of these technologies, each developed through dedicated research, will be demonstrated by implementing a multicore SoC hardware compliant with the RISC-V architecture. Verification will first be carried out in an FPGA environment (Figure 1), followed by the construction of a prototype chip–based environment.
 			</p>
 			<p>
 				<figure>
@@ -173,7 +185,7 @@
 				</figure>
 			</div>
 			<p>
-				The concept is demonstrated by presenting several use cases as follows. The first use case shown in Figure 4 is includes data expiration checking and authentication request processing. The code first verifies the trusted current time provided by TEE and the validity of the document’s expiration, and then send the authentication code via SMS for further processing. Figures 5 through 7 present examples in which the execution environment is verified prior to deciding whether to decrypt the data. In Figure 5, this Mobile Trunk allows execution only when it is running in a TEE environment within a Secure VM on the cloud. Figures 6 and 7 illustrate an example in which Mobile Trunk verifies whether the PC used for execution is workplace hardware and enforces execution control accordingly.
+				The concept is demonstrated by presenting several use cases as follows. The first use case shown in Figure 3 is includes data expiration checking and authentication request processing. The code first verifies the trusted current time provided by TEE and the validity of the document’s expiration, and then send the authentication code via SMS for further processing. Figures 5 through 7 present examples in which the execution environment is verified prior to deciding whether to decrypt the data. In Figure 5, this Mobile Trunk allows execution only when it is running in a TEE environment within a Secure VM on the cloud. Figures 6 and 7 illustrate an example in which Mobile Trunk verifies whether the PC used for execution is workplace hardware and enforces execution control accordingly.
 			</p>
 			<div class="three_fig flexbox_cwap">
 				<figure>
@@ -193,7 +205,7 @@
 		
 		
       </div><!-- // .section_inr -->
-    </div><!-- // #outline -->
+    </div><!-- //  -->
 <!--▲ここまで▲-->
 
   </main>

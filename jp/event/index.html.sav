@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="ja">
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <title>イベント | セキュアコンピュータシステム研究開発センター (CRADSEC)</title>
@@ -16,20 +16,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="イベント | セキュアコンピュータシステム研究開発センター (CRADSEC)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://cradsec.rois.ac.jp/common/img/og.jpg">
+<meta name="twitter:image" content="https://cradsec.rois.ac.jp/jp/event/index.html">
 
 <link rel="stylesheet" href="../../common/css/style.css">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF854L5TWF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NF854L5TWF');
-  </script>
 </head>
 
-<body id="wapper" class="sec jp event">
+<body id="wapper" class="sec jp">
   <header id="header">
     <div class="inr">
       <div class="title">
@@ -44,20 +36,8 @@
         <ul class="menu">
           <li><a href="../overview/index.html">概要</a></li>
           <li><a href="../project/index.html">研究プロジェクト</a></li>
-          <li><a href="../software/index.html">ソフトウェア</a></li>
           <li><a href="../member/index.html">メンバー</a></li>
-          <li class="has-submenu">
-			<button class="submenu-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="publication-menu">
-				成果 <span class="arrow" aria-hidden="true">▼</span>
-			</button>
-			<ul id="publication-menu" class="submenu">
-				<li><a href="../publication/index.html">論文・発表（全体）</a></li>
-				<li><a href="../publication/year.html">論文・発表（年度別）</a></li>
-				<li><a href="../publication/theme.html">論文・発表（テーマ別）</a></li>
-				<li><a href="../publication/award.html">表彰</a></li>
-				<li><a href="../software/index.html">オープンソース</a></li>
-			</ul>
-          </li>
+          <li><a href="../publication/index.html">成果</a></li>
           <li class="current"><a href="../event/index.html">イベント</a></li>
           <li><a href="../access/index.html">アクセス</a></li>
           <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>
@@ -87,32 +67,21 @@
 <!--▼ここから▼-->
     <div id="contents">
       <div class="section_inr">
-     
-      </div><!-- // .section_inr -->
-    </div><!-- // #outline -->
-    <div id="contents">
-      <div class="section_inr">
-      <H3>終了したイベント</H3>
-        <dl>
-          <dt><a href="sympo2026/" target="_blank">
-	      第1回TriniTEE Symposium - ユニバーサルTEE実現に向けて -</a></dt>
-          <dd>
-            日時：2026年3月30日 12:30-17:30<br>
-            開催場所：一橋講堂 中会議場<br>
-	    参加登録〆切：2026年3月23日(月) 正午（会場参加は定員(100名)になり次第締め切ります）
-          </dd>
-        </dl>     
-	<dl>
-	<dl>
-          <dt><a href="https://sc-sys.github.io/" target="_blank">第11回SATSSワークショップ</a></dt>
-          <dd>
-            日時：2025年11月19日 13:30-17:00<br>
-            開催場所：一橋講堂 特別会議室101–103<br>
-          </dd>
-        </dl>     
-	  <dt><a href="https://events.linuxfoundation.org/riscv-summit/?__hstc=98396288.9470079fa96a572561c09f09101e09da.1752825402155.1759895553577.1760502667790.10&__hssc=98396288.1.1760502667790&__hsfp=4099202892" target="_blank">RISC-V Summit North America</a></dt>
-	  <dd>2025年10月22日〜23日 米国Santa Claraで開催されるSummit 2025 展示会に出展します。</dd>
-	</dl>
+	<ul>
+	  <li>
+	    <dl>
+	      <dt><a href="https://events.linuxfoundation.org/riscv-summit/?__hstc=98396288.9470079fa96a572561c09f09101e09da.1752825402155.1759895553577.1760502667790.10&__hssc=98396288.1.1760502667790&__hsfp=4099202892" target="_blank">RISC-V Summit North America</a></dt>
+	      <dd style="margin:0 0 0.2em 1em;line-height:0.9;">2025年10月22日〜23日 米国Santa Claraで開催されるSummit 2025 展示会に出展します。</dd>
+	    </dl>
+	  </li>
+	  <li>
+	    <dl>
+	      <dt><a href="https://sc-sys.github.io/" target="_blank">第11回SATSSワークショップ</a></dt>
+	      <dd style="margin:0 0 0.2em 1em;line-height:0.9;">日時：2025年11月19日 13:30-17:00</dd>
+	      <dd style="margin:0 0 0.2em 1em;line-height:1.1;">開催場所：一橋講堂 特別会議室101–103</dd>
+	    </dl>
+	  </li>
+	</ul>
       </div><!-- // .section_inr -->
     </div><!-- // #outline -->
 <!--▲ここまで▲-->

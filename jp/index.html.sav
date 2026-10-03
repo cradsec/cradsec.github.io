@@ -1,20 +1,20 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Center for R&amp;D on Secure Computer Systems (CRADSEC)</title>
+  <title>セキュアコンピュータシステム研究開発センター (CRADSEC)</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
-  <meta name="author" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
-<meta name="coyright" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
-<meta property="og:site_name" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
-<meta property="og:title" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+  <meta name="author" content="セキュアコンピュータシステム研究開発センター (CRADSEC)">
+<meta name="coyright" content="セキュアコンピュータシステム研究開発センター (CRADSEC)">
+<meta property="og:site_name" content="セキュアコンピュータシステム研究開発センター (CRADSEC)">
+<meta property="og:title" content="セキュアコンピュータシステム研究開発センター (CRADSEC)">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cradsec.rois.ac.jp/en/">
+<meta property="og:url" content="https://cradsec.rois.ac.jp/jp/">
 <meta property="og:image" content="https://cradsec.rois.ac.jp/common/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Center for R&amp;D on Secure Computer Systems (CRADSEC)">
+<meta name="twitter:title" content="セキュアコンピュータシステム研究開発センター (CRADSEC)">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://cradsec.rois.ac.jp/common/img/og.jpg">
  
@@ -22,12 +22,12 @@
 <link rel="stylesheet" href="../common/css/slick.css">
 </head>
 
-<body id="wapper" class="en">
+<body id="wapper" class="jp">
   <header id="header">
     <div class="inr">
       <div class="title">
 		<div class="logo"><img src="../common/img/logo.svg" alt="Cradsec" width="180" height="40"></div>
-        <h1>Center for R&amp;D on Secure Computer Systems</h1>
+        <h1>セキュアコンピュータシステム研究開発センター</h1>
       </div>
       <nav id="nav" class="dl-menuwrapper">
         <button class="menu_trigger">Open Menu
@@ -35,29 +35,17 @@
           <span></span>
         </button>
         <ul class="menu">
-          <li><a href="overview/index.html">Overview</a></li>
-          <li><a href="project/index.html">Projects</a></li>
-          <li><a href="software/index.html">Open Source</a></li>
-          <li><a href="member/index.html">Members</a></li>
-          <li class="has-submenu current">
-              <button class="submenu-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="publication-menu">
-                Publications <span class="arrow" aria-hidden="true">▼</span>
-              </button>
-              <ul id="publication-menu" class="submenu">
-                <li><a href="publication/index.html">Publications (All)</a></li>
-                <li><a href="publication/year.html">Publications (By Year)</a></li>
-                <li><a href="publication/theme.html">Publications (By Topic)</a></li>
-                <!--li><a href="publication/award.html">Awards</a></li-->
-                <li><a href="software/index.html">Open Source</a></li>
-              </ul>
-          </li>
-          <li><a href="event/index.html">Events</a></li>
-          <li><a href="access/index.html">Access</a></li>
+          <li><a href="overview/index.html">概要</a></li>
+          <li><a href="project/index.html">研究プロジェクト</a></li>
+          <li><a href="member/index.html">メンバー</a></li>
+          <li><a href="publication/index.html">成果</a></li>
+          <li><a href="event/index.html">イベント</a></li>
+          <li><a href="access/index.html">アクセス</a></li>
           <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>
         </ul><!-- // .menu -->
       </nav><!-- // #nav -->
       <div class="lang">
-		<a href="../jp/index.html">JP</a>
+		<a href="../en/index.html">EN</a>
       </div>
     </div>
   </header>
@@ -74,24 +62,23 @@
 	<div id="news">
       <div class="section_inr">
         <div class="topic_txt">
-	  <h2>NEWS</h2>
+			<h2>NEWS</h2>
 			<div class="topic_contents">
-			  <dl></dl>
-			  <dl>
-				<dt>October 15, 2025</dt>
-				<dd>Our official website is now open.</dd>
-			</dl>
-			<!----
 			<dl>
-				<dt>October XX, 2025</dt>
+				<dt>2025年10月15日</dt>
+				<dd>公式ウェブサイトを公開しました。</dd>
+			</dl>
+			<!---
+			<dl>
+				<dt>2025年10月XX日</dt>
 				<dd>内容内容</dd>
 			</dl>
 			<dl>
-				<dt>October XX, 2025</dt>
+				<dt>2025年10月XX日</dt>
 				<dd>内容内容</dd>
 			</dl>
 			<dl>
-				<dt>October XX, 2025</dt>
+				<dt>2025年10月XX日</dt>
 				<dd>内容内容</dd>
 			</dl>
 			--->
@@ -107,13 +94,16 @@
 			<figure>
 				<img src="../common/img/outline.png" alt="" width="428" height="264">
 			</figure>
-			<p>
-				We aim to realize a unified TEE architecture that can flexibly operate across diverse platforms ranging from IoT devices to the cloud. This architecture will allow the selection of appropriate enclave configurations and protection mechanisms according to specific requirements and threat models, while taking into account trade-offs among security, performance, and energy consumption.<br>
-				From the hardware perspective, we will provide highly versatile TEE primitives. Using these primitives, system software will be able to flexibly configure protection domains. From the theoretical perspective, we will develop formal verification techniques to ensure that the protection domains built on top of the TEE primitives are provably secure against the assumed threat models.<br>
-				Furthermore, we will develop a software environment that enables secure execution of advanced cryptographic operations on the proposed TEE. As a proof of concept (PoC), we will prototype applications that realize secure data distribution.<br>
-				All developed artifacts will be released as open source including hardware IPs.
+			<p class="mB1em">
+				本研究開発では、IoTからクラウドまで多様なプラットフォームにおいて、その要求・脅威モデルに応じて適切な保護領域を構成できる単一のTEEアーキテクチャ（高信頼実行環境の構成方式）を実現します。ハードウェアが提供するプリミティブ（基本メカニズム）を用いて、ソフトウェアが柔軟に保護領域を構成し、それがセキュアであることを理論的に保証します。また、プライバシーなどを考慮したアテステーション(真正性・完全性検証)機構や、暗号処理などを含むTEEアプリケーションを異なるTEE上でセキュアに実行するミドルウェアを開発します。 
 			</p>
-			<div class="btn"><a href="overview/index.html">Overview</a></div>
+			<p class="mB1em">
+				 また、共同利用基盤施設として、研究コミュニティおよび若手研究者の育成、国際標準化などのアウトリーチ活動や新たな価値の創出に向けた活動を推進します。
+			</p>
+			<p>
+				本研究開発は、内閣府が進める<a href="https://www.jst.go.jp/k-program/index.html" target="_blank">経済安全保障重要技術育成プログラム(K Program) </a>の支援を受け、開発構想 <a href="https://www.jst.go.jp/k-program/program/cyber3.html" target="_blank">セキュアなデータ流通を支える暗号関連技術（高機能暗号）</a> の支援を受けています。 
+			</p>
+			<div class="btn"><a href="overview/index.html">概要</a></div>
         </div>
       </div><!-- // .section_inr -->
     </div><!-- // #outline -->
@@ -154,7 +144,7 @@
 				</a>
 			</li>
 		</ul>
-		<div class="btn"><a href="project/index.html">Projects</a></div>
+		<div class="btn"><a href="project/index.html">プロジェクト</a></div>
       </div><!-- // .section_inr -->
     </div><!-- // #project -->
 <!--▲ここまで▲-->
@@ -166,236 +156,177 @@
 			<li>
 				<img src="../common/img/member/ishikawa.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Yutaka Ishikawa</h3>
-					<div class="syozoku">Director, Project Professor</div>
+					<h3>石川 裕</h3>
+					<div class="syozoku">センター長・特任教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/goshima.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Masahiro Goshima</h3>
-					<div class="syozoku">Vice Director, Professor</div>
+					<h3>五島 正裕</h3>
+					<div class="syozoku">副センター長・教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/takefusa.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Atsuko Takefusa</h3>
-					<div class="syozoku">Vice Director, Professor</div>
+					<h3>竹房 あつ子</h3>
+					<div class="syozoku">副センター長・教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/sekiyama.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Taro Sekiyama</h3>
-					<div class="syozoku">Vice Director, Associate Professor</div>
+					<h3>関山 太朗</h3>
+					<div class="syozoku">副センター長・准教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/kono.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Kenji Kono</h3>
-					<div class="syozoku">Vice Director, Visiting Professor</div>
+					<h3>河野 健二</h3>
+					<div class="syozoku">副センター長・客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/ohori.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Atsushi Ohori</h3>
-					<div class="syozoku">Project Professor</div>
+					<h3>大堀 淳</h3>
+					<div class="syozoku">特任教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/ohata.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Satsuya Ohata</h3>
-					<div class="syozoku">Researcher</div>
-				</div>
-			</li>
-			<li>
-				<img src="../common/img/member/kuru.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Ismail Kuru</h3>
-					<div class="syozoku">Postdoctoral Researcher</div>
+					<h3>大畑 幸矢</h3>
+					<div class="syozoku">研究員</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/uchiyama.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Kazuhide Uchiyama</h3>
-					<div class="syozoku">Research Assistant</div>
+					<h3>内山 一秀</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/matsumi.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Wakuto Matsumi</h3>
-					<div class="syozoku">Research Assistant</div>
-				</div>
-			</li>
-			<li>
-				<img src="../common/img/member/yoshida.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Akira Yoshida</h3>
-					<div class="syozoku">Research Assistant</div>
-				</div>
-			</li>
-			<li>
-				<img src="../common/img/member/nakamura.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Sota Nakamura</h3>
-					<div class="syozoku">Research Assistant</div>
+					<h3>松見 湧斗</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/sasaki.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Reina Sasaki</h3>
-					<div class="syozoku">Research Assistant</div>
-				</div>
-			</li>
-			<li>
-				<img src="../common/img/member/tsuji.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Arisa Tsuji</h3>
-					<div class="syozoku">Research Assistant</div>
+					<h3>佐々木 怜名</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/kita.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Haruka Kita</h3>
-					<div class="syozoku">Research Assistant</div>
+					<h3>喜多 陽花</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/furukawa.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Jun Furukawa</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>古川 潤</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/takamaeda.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Shinya Takamaeda</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>高前田 伸也</h3>
+					<div class="syozoku">客員准教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/shioya.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Ryota Shioya</h3>
-					<div class="syozoku">Visiting Associate Professor</div>
+					<h3>塩谷 亮太</h3>
+					<div class="syozoku">客員准教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/kimura.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Keiji Kimura</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>木村 啓二</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/kourai.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Kenichi Kourai</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>光来 健一</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/suzaki.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Kuniyasu Suzaki</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>須崎 有康</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/nakajo.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Hironori Nakajo</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>中條 拓伯</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/miyazawa.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Shinichi Miyazawa</h3>
-					<div class="syozoku">Visiting Lecturer</div>
+					<h3>宮澤 慎一</h3>
+					<div class="syozoku">客員講師</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/mitsusawa.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Atsushi Mitsuzawa</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>光澤 敦</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/oguchi.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Masato Oguchi</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>小口 正人</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/kobayashi.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Naoki Kobayashi</h3>
-					<div class="syozoku">Visiting Professor</div>
+					<h3>小林 直樹</h3>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
-				<img src="../common/img/member/koshiba.jpg" alt="" width="360" height="400">
+				<img src="../common/img/member/hata.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Atsushi Koshiba</h3>
-					<div class="syozoku">Visiting Associate Professor</div>
+					<h3>畑 輝史</h3>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/takata.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Shogo Takata</h3>
-					<div class="syozoku">Visiting Research Assistant</div>
+					<h3>高田 勝悟</h3>
 				</div>
 			</li>
 			<li>
 				<img src="../common/img/member/hashimoto.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>Koichi Hashimoto</h3>
-					<div class="syozoku">Visiting Research Assistant</div>
+					<h3>橋本 浩一</h3>
 				</div>
 			</li>
-			<li>
-				<img src="../common/img/member/kanazawa.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Hayato Kanazawa</h3>
-					<div class="syozoku">Visiting Research Assistant</div>
-				</div>
-			</li>
-			<li>
-				<img src="../common/img/member/nakai.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Koichi Nakai</h3>
-					<div class="syozoku">Project Specialist</div>
-				</div>
-			</li>
-			<li>
-				<img src="../common/img/member/shirao.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Naoko Shirao</h3>
-					<div class="syozoku">Assistant Clerk</div>
-				</div>
-			</li>
-			<!--li>
-				<img src="../common/img/member/hata.jpg" alt="" width="360" height="400">
-				<div class="people-content">
-					<h3>Terufumi Hata</h3>
-					<div class="syozoku">Assistant Professor, Keio University</div>
-				</div>
-			</li-->
 		</ul>
-		<div class="btn"><a href="member/index.html">Members</a></div>
+		<div class="btn"><a href="member/index.html">メンバー</a></div>
       </div><!-- // .section_inr -->
     </div><!-- // #member -->
 <!--▲ここまで▲-->

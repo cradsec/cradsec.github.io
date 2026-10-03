@@ -894,6 +894,36 @@ html {
 
 }
 
+.poster {
+  margin-bottom:1em;
+  background:rgba(255,255,255,0.5);
+  padding:1em;
+}
+
+.poster li {
+  padding-left:20px;
+  padding-bottom:0.5em;
+  padding-top:0.5em;
+  position:relative;
+}
+
+.poster li:not(:last-child) {
+  border-bottom:dashed 1px #666;
+}
+
+.poster li::before {
+  content:"";
+  position: absolute;
+  top: 0.75em;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: #eee9dc;
+  border: 4px solid #1e7cb0;
+  border-radius: 50%;
+  display: block;
+}
+
 
 
 @media print {

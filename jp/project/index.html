@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="研究プロジェクト | セキュアコンピュータシステム研究開発センター (CRADSEC)">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://cradsec.rois.ac.jp/en/project/index.html">
+<meta name="twitter:image" content="https://cradsec.rois.ac.jp/common/img/og.jpg">
 
 <link rel="stylesheet" href="../../common/css/style.css">
 </head>
@@ -36,8 +36,20 @@
         <ul class="menu">
           <li><a href="../overview/index.html">概要</a></li>
           <li class="current"><a href="../project/index.html">研究プロジェクト</a></li>
+          <li><a href="../software/index.html">ソフトウェア</a></li>
           <li><a href="../member/index.html">メンバー</a></li>
-          <li><a href="../publication/index.html">成果</a></li>
+          <li class="has-submenu">
+			<button class="submenu-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="publication-menu">
+				成果 <span class="arrow" aria-hidden="true">▼</span>
+			</button>
+			<ul id="publication-menu" class="submenu">
+				<li><a href="../publication/index.html">論文・発表（全体）</a></li>
+				<li><a href="../publication/year.html">論文・発表（年度別）</a></li>
+				<li><a href="../publication/theme.html">論文・発表（テーマ別）</a></li>
+				<li><a href="../publication/award.html">表彰</a></li>
+				<li><a href="../software/index.html">オープンソース</a></li>
+			</ul>
+          </li>
           <li><a href="../event/index.html">イベント</a></li>
           <li><a href="../access/index.html">アクセス</a></li>
           <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>

@@ -46,8 +46,20 @@
         <ul class="menu">
           <li><a href="overview/index.html">概要</a></li>
           <li><a href="project/index.html">研究プロジェクト</a></li>
+          <li><a href="software/index.html">ソフトウェア</a></li>
           <li><a href="member/index.html">メンバー</a></li>
-          <li><a href="publication/index.html">成果</a></li>
+          <li class="has-submenu">
+			<button class="submenu-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="publication-menu">
+				成果 <span class="arrow" aria-hidden="true">▼</span>
+			</button>
+			<ul id="publication-menu" class="submenu">
+				<li><a href="publication/index.html">論文・発表（全体）</a></li>
+				<li><a href="publication/year.html">論文・発表（年度別）</a></li>
+				<li><a href="publication/theme.html">論文・発表（テーマ別）</a></li>
+				<li><a href="publication/award.html">表彰</a></li>
+				<li><a href="software/index.html">オープンソース</a></li>
+			</ul>
+          </li>
           <li><a href="event/index.html">イベント</a></li>
           <li><a href="access/index.html">アクセス</a></li>
           <li><a href="https://sc-sys.github.io/" target="_blank">SATSS</a></li>
@@ -201,6 +213,13 @@
 				</div>
 			</li>
 			<li>
+				<img src="../common/img/member/kuru.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>クル イスマイル</h3>
+					<div class="syozoku">博士研究員</div>
+				</div>
+			</li>
+			<li>
 				<img src="../common/img/member/uchiyama.jpg" alt="" width="360" height="400">
 				<div class="people-content">
 					<h3>内山 一秀</h3>
@@ -215,9 +234,30 @@
 				</div>
 			</li>
 			<li>
+				<img src="../common/img/member/yoshida.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>吉田 憲礼</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
+				</div>
+			</li>
+			<li>
+				<img src="../common/img/member/nakamura.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>中村 草太</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
+				</div>
+			</li>
+			<li>
 				<img src="../common/img/member/sasaki.jpg" alt="" width="360" height="400">
 				<div class="people-content">
 					<h3>佐々木 怜名</h3>
+					<div class="syozoku">リサーチ アシスタント</div>
+				</div>
+			</li>
+			<li>
+				<img src="../common/img/member/tsuji.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>辻 有紗</h3>
 					<div class="syozoku">リサーチ アシスタント</div>
 				</div>
 			</li>
@@ -239,7 +279,7 @@
 				<img src="../common/img/member/takamaeda.jpg" alt="" width="360" height="400">
 				<div class="people-content">
 					<h3>高前田 伸也</h3>
-					<div class="syozoku">客員准教授</div>
+					<div class="syozoku">客員教授</div>
 				</div>
 			</li>
 			<li>
@@ -306,9 +346,10 @@
 				</div>
 			</li>
 			<li>
-				<img src="../common/img/member/hata.jpg" alt="" width="360" height="400">
+				<img src="../common/img/member/koshiba.jpg" alt="" width="360" height="400">
 				<div class="people-content">
-					<h3>畑 輝史</h3>
+					<h3>小柴 篤史</h3>
+					<div class="syozoku">客員准教授</div>
 				</div>
 			</li>
 			<li>
@@ -323,6 +364,33 @@
 					<h3>橋本 浩一</h3>
 				</div>
 			</li>
+			<li>
+				<img src="../common/img/member/kanazawa.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>金澤 颯飛</h3>
+				</div>
+			</li>
+			<li>
+				<img src="../common/img/member/nakai.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>中井 康一</h3>
+					<div class="syozoku">特任専門員</div>
+				</div>
+			</li>
+			<li>
+				<img src="../common/img/member/shirao.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>白尾 尚子</h3>
+					<div class="syozoku">事務補佐員</div>
+				</div>
+			</li>
+			<!--li>
+				<img src="../common/img/member/hata.jpg" alt="" width="360" height="400">
+				<div class="people-content">
+					<h3>畑 輝史</h3>
+					<div class="syozoku">慶応義塾大学 助教授</div>
+				</div>
+			</li-->
 		</ul>
 		<div class="btn"><a href="member/index.html">メンバー</a></div>
       </div><!-- // .section_inr -->
@@ -337,7 +405,6 @@
   <script src="../common/js/cmn.js"></script>
   <script src="../common/js/slick.min.js"></script>
   <script src="../common/js/top.js"></script>
-  
 </body>
 
 </html>

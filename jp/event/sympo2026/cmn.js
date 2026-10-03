@@ -20,15 +20,23 @@ $(function(){
 		$('.layer').stop().fadeToggle();
 		$('.menu_trigger').toggleClass('active');
 	});
+
+	// メニュークリック
+	$('.menu li a').click(function(){
+		if(window.innerWidth <= 768){
+			$('.menu').stop(true, true).fadeToggle(500);
+			$('.layer').stop(true, true).fadeToggle();
+			$('.menu_trigger').removeClass('active');
+		}
+	});
 });
 
-$(function(){
-	if (window.matchMedia( '(max-width: 680px)' ).matches){
-		$('.menu li a').click(function(){
-		$('.menu').slideToggle(500);
-		$('.layer').stop().fadeToggle();
-		$('.menu_trigger').toggleClass('active dl-active');
-	});
+// リサイズ時
+$(window).on('resize', function(){
+	if(window.innerWidth > 768){
+		$('.menu').removeAttr('style');
+		$('.layer').removeAttr('style');
+		$('.menu_trigger').removeClass('active');
 	}
 });
 
