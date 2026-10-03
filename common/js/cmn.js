@@ -20,39 +20,43 @@ $(function(){
 		$('.layer').stop().fadeToggle();
 		$('.menu_trigger').toggleClass('active');
 	});
+
+	// メニュークリック
+	$('.menu li a').click(function(){
+		if(window.innerWidth <= 768){
+			$('.menu').stop(true, true).fadeToggle(500);
+			$('.layer').stop(true, true).fadeToggle();
+			$('.menu_trigger').removeClass('active');
+		}
+	});
 });
 
-$(function(){
-	if (window.matchMedia( '(max-width: 768px)' ).matches){
-		$('.menu li a').click(function(){
-		$('.menu').slideToggle(500);
-		$('.layer').stop().fadeToggle();
-		$('.menu_trigger').toggleClass('active dl-active');
-	});
+// リサイズ時
+$(window).on('resize', function(){
+	if(window.innerWidth > 768){
+		$('.menu').removeAttr('style');
+		$('.layer').removeAttr('style');
+		$('.menu_trigger').removeClass('active');
 	}
 });
 
-//ページトップJS
-$(function() {
-	var topBtn = $('#page-top');
-	topBtn.hide();
-	//スクロールが100に達したらボタン表示
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 100) {
-			topBtn.fadeIn();
-		} else {
-			topBtn.fadeOut();
-		}
-	});
-	//スクロールしてトップ
-	topBtn.click(function () {
-		$('body,html').animate({
-			scrollTop: 0
-		}, 600);
-		return false;
-	});
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll(".submenu-toggle").forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                const parent = btn.parentElement;
+                // 他を閉じる
+                document.querySelectorAll(".has-submenu").forEach(item => {
+                    if(item !== parent){
+                        item.classList.remove("open");
+                    }
+                });
+                parent.classList.toggle("open");
+            });
+        });
+    }
 });
-
 
 
 //telタグPC無効
@@ -96,5 +100,29 @@ $(function(){
   };
   });
 
+
+
+
+
+//ページトップJS
+$(function() {
+	var topBtn = $('#page-top');
+	topBtn.hide();
+	//スクロールが100に達したらボタン表示
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 100) {
+			topBtn.fadeIn();
+		} else {
+			topBtn.fadeOut();
+		}
+	});
+	//スクロールしてトップ
+	topBtn.click(function () {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 600);
+		return false;
+	});
+});
 
 

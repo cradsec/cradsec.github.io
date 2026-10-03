@@ -622,154 +622,15 @@ a img:hover {
 
   .menu li {
 	width: calc(100%/7);
-	display: block;
+	display: inline-block;
 	font-size: 1.6rem;
   }
-}
-
-.menu li {
-	position:relative;
 }
 
 @media screen and (max-width: 1000px) {
   .menu {
     display:none;
   }
-}
-
-/* ==========================
-   サブメニュー
-========================== */
-.submenu{
-    position:absolute;
-    top:100%;
-    left:50%;
-    transform:translateX(-50%) translateY(10px);
-    min-width:230px;
-    padding:10px 0;
-    background:#fff;
-    border-radius:10px;
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.12);
-    list-style:none;
-    opacity:0;
-    visibility:hidden;
-    transition:.25s;
-    z-index:999;
-}
-
-.submenu li{
-    width:100%;
-}
-
-.submenu a{
-    display:block;
-    padding:12px 20px;
-    color:#333;
-    transition:.25s;
-    border-left:3px solid transparent;
-}
-
-.submenu a:hover{
-    background:#f7f7f7;
-    border-left:3px solid var(--maincolor);
-    padding-left:26px;
-}
-
-.submenu-toggle {
-	background:none;
-	border:0;
-	cursor: pointer;
-	color:white;
-	text-align:center;
-	font-weight:bold;
-	width:100%;
-	font-size:1.6rem;
-	padding-top:6px;
-	font-family: 'Noto Sans JP', sans-serif, 'Yu Gothic', '游ゴシック', '游ゴシック体', YuGothic, Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
-	font-feature-settings: "palt";
-}
-
-.submenu-toggle span{
-	position:absolute;
-	right:0;
-	bottom:0;
-	font-size:1.4rem;
-}
-
-
-/* PCホバー */
-.has-submenu:hover>.submenu{
-    opacity:1;
-    visibility:visible;
-    transform:translateX(-50%) translateY(0);
-}
-
-.has-submenu:hover>.submenu-toggle .arrow{
-    transform:rotate(180deg);
-}
-
-/* ==========================
-   スマホ
-========================== */
-
-@media(max-width:768px){
-.menu>li{
-    border-bottom:1px solid #eee;
-}
-.submenu-toggle {
-	top:10px;
-	height:30px;
-}
-
-/* PCのabsolute解除 */
-.submenu{
-    position:static;
-    transform:none;
-    opacity:1;
-    visibility:visible;
-    box-shadow:none;
-    border-radius:0;
-    background:#fafafa;
-    padding:0;
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .35s ease;
-    width:100%;
-}
-
-.has-submenu.open .submenu{
-    max-height:300px;
-}
-
-.submenu a{
-    padding:14px 24px;
-    border-left:none;
-}
-
-.submenu a:hover{
-    padding-left:24px;
-}
-.submenu-toggle span {
-	position:static;
-}
-
-.has-submenu:hover>.submenu{
-    transform:translateX(0) translateY(0);
-}
-
-.has-submenu.open .arrow{
-    transform:rotate(180deg);
-	display:inline-block;
-}
-
-
-}
-
-.has-submenu:hover .submenu,
-.has-submenu:focus-within .submenu{
-    opacity:1;
-    visibility:visible;
 }
 /* 5: contents
 ================================== */
@@ -815,7 +676,7 @@ body:not(.jp) .section_inr h2 {
 	margin-bottom:0.5em;
 }
 
-.sec:not(.software,.theme) .section_inr h3 {
+.sec .section_inr h3 {
     position: relative;
     padding: .5em .7em;
     border-radius: 20px 0 0 20px;
@@ -825,12 +686,12 @@ body:not(.jp) .section_inr h2 {
 
 
 @media only screen and (min-width: 768px) {
-.sec:not(.software,.theme) .section_inr h3 {
+.sec .section_inr h3 {
     border-radius: 50px 0 0 50px;
 }
 }
 
-.sec:not(.software,.theme) .section_inr h3:before {
+.sec .section_inr h3:before {
     content: '';
     display: inline-block;
     width: 15px;
@@ -1221,7 +1082,7 @@ footer {
 }
 
 footer:after {
-	content:"© Center for R&D on Secure Computer Systems,\00A0\00A0  cradsec-info@rois.ac.jp";
+	content:"© Center for R&D on Secure Computer Systems";
 	width:100%;
 	background: var(--maincolor);
 	text-align:center;
@@ -1358,18 +1219,11 @@ footer:after {
     break-inside: avoid; /* 要素が途中で分割されないようにする */
 	width:calc( 100%/2 - 15px);
 }
-
 @media screen and (min-width: 768px) {
 	.member li {
 		width:calc( 100%/5 - 10px);
 		margin:0 5px 1em 5px;
 	}
-}
-
-.member .disc li {
-	list-style:disc;
-	width:100%;
-	margin-left:1em;
 }
 
 .bunya {
@@ -1520,52 +1374,4 @@ th,td {
 
 .publication #contents ol {
   margin-bottom:2em;
-}
-
-.software .flexbox_sbwap li,
-.theme .flexbox_sbwap li {
-  width:calc(100%/2 - 50px);
-  margin:0 25px 25px 25px;
-  list-style:none;
-  border:solid 1px #eee;
-  padding:1.5em 1.5em 0 1.5em;
-  box-shadow: 0 10px 25px rgba(23,32,51,.04);
-  border-radius:20px;
-}
-
-.software .nendo {
-  display:inline-block;
-  width:8em;
-  background:#ccc;
-  padding:0.2em 0.5em ;
-  text-align:center;
-  float:right;
-}
-
-.software dl, .award_section dl {display:flex; border-bottom:solid 1px #eee;}
-.software dt {width:7em; padding:0.2em;}
-.software dd {width:calc(100% - 7em); padding:0.2em;}
-
-.award_section dl{padding:0.2em;}
-.award_section dt {width:8em; padding:0.2em;}
-.award_section dd {width:calc(100% - 8em); padding:0.2em;}
-
-
-
-@media(max-width:600px){
-  .software .flexbox_sbwap li,
-  .theme .flexbox_sbwap li  {
-    width:100%;
-    margin: 0 10px 25px 10px;
-  }
-}
-
-
-.award_section {
-  margin:0 auto 25px auto;
-  list-style:none;
-  border:solid 1px #eee;
-  padding:1.5em 1.5em 0 1.5em;
-  box-shadow: 0 10px 25px rgba(23,32,51,.04);
-  border-radius:20px;
 }
